@@ -2,14 +2,22 @@
 	const navShow = () => {
 		const topNav = document.getElementById('TopNav');
 		const bottomNav = document.getElementById('BottomNav');
+		const slot = document.getElementById('slot');
+		const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-		if (topNav && bottomNav) {
-			if (topNav.style.top === '0px') {
+		if (topNav && bottomNav && slot) {
+			if (currentScrollPosition > 100 && topNav.style.top !== '-6.2rem') {
 				topNav.style.top = '-6.2rem';
 				bottomNav.style.bottom = '-4.2rem';
 			} else {
-				topNav.style.top = '0';
-				bottomNav.style.bottom = '0';
+				console.log('currentScrollPosition', currentScrollPosition);
+				if (currentScrollPosition === 0 && bottomNav.style.bottom !== '-4.2rem') {
+					bottomNav.style.bottom = '-4.2rem';
+					topNav.style.top = '0';
+				} else {
+					topNav.style.top = '0';
+					bottomNav.style.bottom = '0';
+				}
 			}
 		}
 	};
