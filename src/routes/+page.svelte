@@ -5,6 +5,15 @@
 	<div class="slots slot2">
 		<div class="slotConatiner c2" />
 	</div>
+	<div class="slots slot2">
+		<div class="slotConatiner c2" />
+	</div>
+	<div class="slots slot2">
+		<div class="slotConatiner c2" />
+	</div>
+	<div class="slots slot2">
+		<div class="slotConatiner c2" />
+	</div>
 </div>
 
 <style>
@@ -12,11 +21,11 @@
 		height: 100%;
 		overflow: hidden;
 
-		background-color: red;
-		margin-bottom: 4.8rem;
+		margin-bottom: 5rem;
+		margin-top: 7rem;
 	}
 	.slots {
-		height: 100vh;
+		height: calc(100vh - 7.2rem);
 
 		width: calc(100% - 20px);
 		margin: 0 10px;
@@ -24,28 +33,13 @@
 		display: flex;
 		align-items: start;
 		justify-content: center;
-		padding-top: 7rem;
-
-		/* height: calc(100vh - 18rem); */
-
-		/* margin-top: 6rem; */
-	}
-	.slot1 {
-		background-color: yellowgreen;
-	}
-	.slot2 {
-		background-color: blue;
+		border-bottom: 5px solid var(--optDark);
+		background-color: var(--secondary);
 	}
 	.slotConatiner {
-		/* height: calc(100% - 11.6rem); */
-		height: 100%;
+		height: calc(100% - 20px);
 		width: calc(100% - 20px);
-		margin: 0 10px;
-	}
-	.c1 {
-		background-color: yellow;
-	}
-	.c2 {
-		background-color: hotpink;
+		margin: 10px;
+		background-color: var(--primary);
 	}
 </style>

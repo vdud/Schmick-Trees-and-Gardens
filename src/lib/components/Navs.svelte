@@ -10,7 +10,6 @@
 				topNav.style.top = '-6.2rem';
 				bottomNav.style.bottom = '-4.2rem';
 			} else {
-				console.log('currentScrollPosition', currentScrollPosition);
 				if (currentScrollPosition === 0 && bottomNav.style.bottom !== '-4.2rem') {
 					bottomNav.style.bottom = '-4.2rem';
 					topNav.style.top = '0';
@@ -30,8 +29,8 @@
 </div>
 
 <div id="BottomNav" class="Nav BottomNav">
-	<button on:click={navShow} class="ContactUs">Contact Us </button>
 	<div class="NavComponents flexDirectionRow">
+		<button on:click={navShow} class="ContactUs">Contact Us </button>
 		<button class="component componentRow component1" />
 		<button class="component componentRow component2" />
 		<button class="component componentRow component3" />
@@ -71,6 +70,10 @@
 
 		border-radius: 5px;
 		margin: 10px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	.topNav {
 		top: 0;
@@ -81,21 +84,23 @@
 		bottom: 0;
 		height: 4rem;
 		transition: bottom 0.3s ease-in-out;
+		display: flex;
+		align-items: center;
 	}
 
 	.NavComponents {
 		height: 100%;
-		width: 100%;
+		width: clamp(100px, 100%, 600px);
 
 		flex-direction: row;
 	}
 	.flexDirectionRow {
 		display: flex;
 		justify-content: space-evenly;
-		align-items: center;
+		align-items: end;
+		margin-bottom: 20px;
 	}
 	.flexDirectionColumn {
-		/* flex-direction: column; */
 		position: relative;
 	}
 
@@ -105,6 +110,7 @@
 	}
 
 	.componentRow {
+		/* height: 6rem; */
 		height: calc(100% - 20px);
 		width: calc(33% - 10px);
 

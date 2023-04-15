@@ -3,8 +3,15 @@
 	import Navs from '$lib/components/Navs.svelte';
 	import { onMount } from 'svelte';
 
+	let topNav: any;
+	let bottomNav: any;
+	let slot: any;
+
 	onMount(() => {
 		window.scrollTo(0, 0);
+		topNav = document.getElementById('TopNav');
+		bottomNav = document.getElementById('BottomNav');
+		slot = document.getElementById('slot');
 	});
 
 	let lastScrollPosition = 0;
@@ -12,22 +19,16 @@
 		const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 		const isScrollingDown = currentScrollPosition > lastScrollPosition;
 
-		const slot = document.getElementById('slot');
-		const topNav = document.getElementById('TopNav');
-		const bottomNav = document.getElementById('BottomNav');
-
-		if (slot && topNav && bottomNav) {
-			const isScrollEnd = currentScrollPosition + window.innerHeight >= slot.offsetHeight;
-			if (isScrollingDown && currentScrollPosition > 100 && !isScrollEnd) {
-				topNav.style.top = '-6.2rem';
-				bottomNav.style.bottom = '-4.2rem';
-			} else if (isScrollEnd) {
-				topNav.style.top = '-6.2rem';
-				bottomNav.style.bottom = '0';
-			} else {
-				topNav.style.top = '0';
-				bottomNav.style.bottom = '0';
-			}
+		const isScrollEnd = currentScrollPosition + window.innerHeight >= slot.offsetHeight;
+		if (isScrollingDown && currentScrollPosition > 100 && !isScrollEnd) {
+			topNav.style.top = '-6.2rem';
+			bottomNav.style.bottom = '-4.2rem';
+		} else if (isScrollEnd) {
+			topNav.style.top = '-6.2rem';
+			bottomNav.style.bottom = '0';
+		} else {
+			topNav.style.top = '0';
+			bottomNav.style.bottom = '0';
 		}
 
 		lastScrollPosition = currentScrollPosition;
