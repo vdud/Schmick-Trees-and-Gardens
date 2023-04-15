@@ -41,9 +41,8 @@
 	.ContactUs {
 		position: absolute;
 		top: 0;
-		left: 0;
+		right: 0;
 		width: fit-content;
-		padding: 100px 100px;
 		height: 1rem;
 		background-color: var(--secondary);
 		box-shadow: var(--boxShadows);
@@ -84,8 +83,6 @@
 		bottom: 0;
 		height: 4rem;
 		transition: bottom 0.3s ease-in-out;
-		display: flex;
-		align-items: center;
 	}
 
 	.NavComponents {
@@ -99,9 +96,10 @@
 		justify-content: space-evenly;
 		align-items: end;
 		margin-bottom: 20px;
+		position: relative;
 	}
 	.flexDirectionColumn {
-		position: relative;
+		/* flex-direction: column; */
 	}
 
 	.component {
