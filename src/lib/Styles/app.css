@@ -1,56 +1,88 @@
 @media (prefers-color-scheme: dark) {
-	:root {
-		--primaryTheme: #000;
-		--secondaryTheme: #111;
-		--tertiaryTheme: #3334;
+  :root {
+    --primaryTheme: #000;
+    --secondaryTheme: #111;
+    --tertiaryTheme: #3334;
 
-		--primaryThemeInverted: #fff;
-		--secondaryThemeInverted: #aaaaaaa1;
-		--tertiaryThemeInverted: #7c7c7c63;
-	}
+    --primaryThemeInverted: #fff;
+    --secondaryThemeInverted: #aaaaaaa1;
+    --tertiaryThemeInverted: #0003;
+  }
 }
 @media (prefers-color-scheme: light) {
-	:root {
-		--primaryTheme: #fff;
-		--secondaryTheme: #aaa;
-		--tertiaryTheme: #666;
+  :root {
+    --primaryTheme: #fff;
+    --secondaryTheme: #eee;
+    --tertiaryTheme: #666;
 
-		--primaryThemeInverted: #000000;
-		--secondaryThemeInverted: #505050;
-		--tertiaryThemeInverted: #555555;
-	}
+    --primaryThemeInverted: #000000;
+    --secondaryThemeInverted: #505050;
+    --tertiaryThemeInverted: #fff3;
+  }
 }
 :root {
-	--fontSize: 1rem;
+  --fontSize: 1rem;
 
-	--boxShadows: 0px 0px 2px #0006, 0px 0px 5px #0009;
-	--boxShadowsBlur: 0px 0px 10px #1111, 0px 0px 8px #1118;
-	--boxInsetShadows: inset 0px 0px 6px #0006, inset 0px 0px 1px #111;
+  --boxShadows: 0px 0px 2px #0004, 0px 0px 5px #0006;
+  --boxShadowsBlur: 0px 0px 10px #1112, 0px 0px 8px #1117;
+  --boxInsetShadows: inset 0px 0px 6px #0004, inset 0px 0px 1px #111;
 
-	--primary: #cd7b41;
-	--secondary: #7fb785;
-	--optDark: #c63734;
-	--optLight: #ffeead;
-	--secOptDark: #b08daf;
-	--secOptLight: #c38387;
-	--disabled: #414141;
+  --primary: #cd7b41;
+  --secondary: #7fb785;
+  --optDark: #c63734;
+  --optLight: #ffeead;
+  --secOptDark: #b08daf;
+  --secOptLight: #c38387;
+  --disabled: #414141;
 
-	--white: #fff;
-	--black: #000;
+  --white: #fff;
+  --black: #000;
 
-	--dull: 70%;
-	--extraDull: 20%;
+  --dull: 70%;
+  --extraDull: 20%;
 
-	--averageMargin: 10px;
+  --averageMargin: 10px;
 
-	--buttonHW: calc(var(--averageMargin) * 3);
-	--borderRadius: calc(var(--buttonHW) / 2);
-	--smallerBorderRadius: calc(var(--buttonHW) / 3);
+  --buttonHW: calc(var(--averageMargin) * 3);
+  --borderRadius: calc(var(--buttonHW) / 2);
+  --smallerBorderRadius: calc(var(--buttonHW) / 3);
 }
 
 main,
 body {
-	margin: 0;
-	padding: 0;
-	background-color: red;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+button,
+button:active,
+button:focus,
+input:focus,
+input:active,
+input:visited {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  white-space: nowrap;
+
+  background-color: transparent;
+
+  border: none;
+  outline: none;
+  box-shadow: none;
+  resize: none;
+}
+p {
+  color: var(--primaryThemeInverted);
 }
