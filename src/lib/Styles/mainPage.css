@@ -1,0 +1,106 @@
+.small {
+	font-size: 0.75rem;
+	font-weight: 100;
+	text-transform: uppercase;
+	opacity: 0.75;
+}
+.imgContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	height: max-content;
+	width: 100%;
+	z-index: 0;
+}
+.grad {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(180deg, #0000, var(--primaryTheme));
+	z-index: 1;
+}
+.imgSlot {
+	width: 100%;
+	z-index: 0;
+}
+.slot {
+	height: 100%;
+	overflow: hidden;
+
+	margin-bottom: 5rem;
+	margin-top: 7rem;
+}
+.slots {
+	overflow: hidden;
+
+	/* height: calc(100vh - 7.2rem); */
+	height: 600px;
+
+	width: calc(100% - 20px);
+	margin: 9px;
+
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	background-color: var(--primaryTheme);
+	/* background-color: var(--primary); */
+	border: 1px solid var(--tertiaryThemeInverted);
+	border-radius: var(--borderRadius);
+	box-shadow: var(--boxShadows);
+
+	position: relative;
+}
+.slot2 {
+	height: 450px;
+	background-color: transparent;
+	box-shadow: none;
+}
+.slot5 {
+	height: 750px;
+}
+.slotConatiner {
+	/* height: calc(100% - 20px); */
+	/* width: calc(100% - 20px); */
+	/* margin: 10px; */
+	height: 100%;
+	width: 100%;
+	/* z-index: 0; */
+
+	display: flex;
+	align-items: end;
+	justify-content: center;
+}
+.slotGrad {
+	height: 50%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+
+	/* background-color: #fff1; */
+	background: linear-gradient(180deg, #0000, var(--primaryTheme));
+}
+.InfoBox {
+	/* height: fit-content; */
+	width: 80%;
+
+	display: flex;
+	align-items: start;
+	padding: 20px;
+	justify-content: end;
+	flex-direction: column;
+	color: var(--primaryThemeInverted);
+	background: linear-gradient(0deg, #0000, var(--tertiaryTheme));
+
+	z-index: 2;
+
+	/* background blur */
+	backdrop-filter: blur(3px);
+	/* webkit too */
+	-webkit-backdrop-filter: blur(3px);
+
+	border-radius: 10px;
+	border-top: 1px solid var(--tertiaryThemeInverted);
+	margin-bottom: var(--averageMargin);
+}

@@ -1,18 +1,12 @@
 <script lang="ts">
+	import '$lib/Styles/mainPage.css';
 	import Img_One from '$lib/Assets/old-website-images/Old-website-asset-No-1.jpg';
 	import Img_Two from '$lib/Assets/old-website-images/Old-website-asset-No-2.jpg';
 	import Img_Three from '$lib/Assets/old-website-images/Old-website-asset-No-3.jpg';
 	import Img_Four from '$lib/Assets/old-website-images/Old-website-asset-No-4.jpg';
 
 	import gradient1 from '$lib/Assets/gradients/1x/Asset 2.png';
-
-	const navShow = () => {
-		const bottomNav = document.getElementById('BottomNav');
-
-		if (bottomNav) {
-			bottomNav.style.bottom = '0';
-		}
-	};
+	import HorizontolSlide from '$lib/components/HorizontolSlide.svelte';
 </script>
 
 <!-- /Users/varundudeja/Documents/Schmick-Trees-and-Gardens/src/lib/ -->
@@ -33,48 +27,7 @@
 		</div>
 	</div>
 	<div class="slots slot2">
-		<div class="imgContainer">
-			<div class="grad" />
-			<!-- <img class="imgSlot" src={gradient1} alt="Gardening, cutting grass" /> -->
-		</div>
-		<div class="slotConatiner c2">
-			<div class="InfoBox">
-				<h1>Service Zones 📍</h1>
-				<p>Schmick Trees & Gardens offers a range of solutions, focusing on 3 core areas.</p>
-				<p class="small">Tap the box most relevant to you above and discover how we can assist! 🌳 🌺</p>
-			</div>
-			<div class="servicesFlex">
-				<button on:click={navShow} class="flex flex1">
-					<div class="flexGrad" />
-					<div class="imgContainer scale2">
-						<div class="grad" />
-						<img class="imgSlotFlex" src={Img_Two} alt="Gardening, cutting grass" />
-					</div>
-					<div class="FlexInfo">
-						<p class="FlexInfoText">Mowing</p>
-					</div>
-				</button>
-				<button on:click={navShow} class="flex flex2">
-					<div class="flexGrad" />
-					<div class="imgContainer scale2">
-						<div class="grad" />
-						<img class="imgSlotFlex" src={Img_Four} alt="Gardening, cutting grass" />
-					</div>
-					<div class="FlexInfo">
-						<p class="FlexInfoText">Trees</p>
-					</div></button>
-				<button on:click={navShow} class="flex flex3">
-					<div class="flexGrad" />
-					<div class="imgContainer scale2">
-						<div class="grad" />
-						<img class="imgSlotFlex" src={Img_One} alt="Gardening, cutting grass" />
-					</div>
-					<div class="FlexInfo">
-						<p class="FlexInfoText">Gardens</p>
-					</div></button>
-			</div>
-			<div class="slotGrad" />
-		</div>
+		<HorizontolSlide />
 	</div>
 	<div class="slots slot3">
 		<div class="imgContainer">
@@ -155,77 +108,11 @@
 </div>
 
 <style>
-	.flexGrad {
-		position: absolute;
-		bottom: 30px;
-		left: 0;
-		width: 100%;
-		height: calc(93% - 30px);
-		background: linear-gradient(180deg, #0000, var(--primaryThemeInverted));
-		z-index: 4;
-	}
 	.small {
 		font-size: 0.75rem;
 		font-weight: 100;
 		text-transform: uppercase;
 		opacity: 0.75;
-	}
-	.scale2 {
-		scale: 1.2;
-	}
-	.imgSlotFlex {
-		width: 100%;
-		z-index: 0;
-	}
-
-	.FlexInfoText {
-		font-size: 1.2rem;
-		font-weight: 600;
-
-		color: var(--primaryTheme);
-	}
-	.FlexInfo {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 30px;
-		z-index: 2;
-		/* height: fit-content; */
-
-		background-color: var(--primaryThemeInverted);
-		/* contain text */
-		white-space: normal;
-	}
-	.servicesFlex {
-		position: absolute;
-		top: calc(var(--averageMargin) * 4);
-		left: calc(var(--averageMargin) * 2);
-
-		width: calc(100% - var(--averageMargin) * 4);
-
-		height: 45%;
-
-		display: flex;
-		align-items: center;
-		justify-content: space-evenly;
-
-		overflow: hidden;
-	}
-	.flex {
-		/* margin: 3px; */
-		/* width: 33.33%; */
-		width: calc(100% / 3 - 6px);
-		/* height: calc(100% - 6px); */
-		height: 169px;
-		background-color: var(--primaryTheme);
-		overflow: hidden;
-
-		border-radius: var(--borderRadius);
-		box-shadow: var(--boxShadows);
-		border: 1px solid var(--primaryThemeInverted);
-
-		position: relative;
 	}
 	.imgContainer {
 		position: absolute;
@@ -275,7 +162,13 @@
 		position: relative;
 	}
 	.slot2 {
-		height: 450px;
+		/* height: 450px; */
+
+		background-color: transparent;
+		border: 1px solid #0000;
+		box-shadow: none;
+
+		/* overflow: scroll; */
 	}
 	.slot5 {
 		height: 750px;

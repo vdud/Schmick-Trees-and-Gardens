@@ -71,10 +71,10 @@ body {
 	padding: 0;
 	background-color: var(--primary);
 }
-
+/* 
 ::-webkit-scrollbar {
 	display: none;
-}
+} */
 
 button {
 	cursor: pointer;
