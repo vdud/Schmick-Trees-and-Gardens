@@ -38,14 +38,20 @@
 	</div>
 	<div class="textBox">
 		<div class="InfoBox">
-			<h1>Service Zones 📍</h1>
-			<p>Schmick Trees & Gardens offers a range of solutions, focusing on 3 core areas.</p>
-			<p class="small">Tap the box most relevant to you above and discover how we can assist! 🌳 🌺</p>
+			<h1 class="primaryTheme">Service Zones 📍</h1>
+			<p class="primaryTheme">Schmick Trees & Gardens offers a range of solutions, focusing on 3 core areas.</p>
+			<p class="small primaryTheme">Tap the box most relevant to you above and discover how we can assist! 🌳 🌺</p>
 		</div>
 	</div>
 </div>
 
 <style>
+	.InfoBox {
+		background-image: none;
+	}
+	.primaryTheme {
+		color: var(--primaryTheme);
+	}
 	.flexText {
 		position: absolute;
 		color: var(--primaryThemeInverted);
@@ -58,7 +64,7 @@
 	.gradFlex {
 		width: 100%;
 		height: 100%;
-		background-image: linear-gradient(#0000, green);
+		background-image: linear-gradient(#0000, var(--primary));
 
 		position: absolute;
 	}
@@ -81,7 +87,7 @@
 	.textBox {
 		height: 30%;
 		width: 100%;
-		background-color: green;
+		/* background-color: green; */
 
 		display: flex;
 		align-items: center;
@@ -92,7 +98,7 @@
 		height: 100%;
 		width: 100%;
 		overflow: hidden;
-		background-color: red;
+		/* background-color: red; */
 	}
 	.flexBoxy {
 		display: flex;
@@ -103,7 +109,7 @@
 		height: 70%;
 		width: 100%;
 		overflow: hidden;
-		background-color: blue;
+		/* background-color: blue; */
 	}
 	.box {
 		height: 100%;
@@ -115,7 +121,7 @@
 	.box:hover {
 		filter: brightness(0.8);
 	}
-	.box1 {
+	/* .box1 {
 		background-color: yellow;
 	}
 	.box2 {
@@ -123,5 +129,5 @@
 	}
 	.box3 {
 		background-color: antiquewhite;
-	}
+	} */
 </style>
