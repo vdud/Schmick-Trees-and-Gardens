@@ -23,11 +23,11 @@
 		const isScrollingDown = currentScrollPosition > lastScrollPosition;
 		const isScrollingUp = currentScrollPosition < lastScrollPosition;
 
-		// const isScrollEnd = currentScrollPosition + window.innerHeight >= slot.offsetHeight;
+		const isScrollEnd = currentScrollPosition + window.innerHeight >= slot.offsetHeight;
 		const isScrollStart = currentScrollPosition < 100;
 		// const isScrollStart = currentScrollPosition === 0;
 
-		if (isScrollingDown && !isScrollStart && !isScrollingUp) {
+		if (isScrollingDown && !isScrollStart && !isScrollingUp && !isScrollEnd) {
 			topNav.style.top = '-6.2rem';
 			// bottomNav.style.bottom = '-4.2rem';s
 			bottomNav.style.bottom = '0';
@@ -37,6 +37,12 @@
 		} else if (isScrollingUp) {
 			topNav.style.top = '0';
 			bottomNav.style.bottom = '-4.2rem';
+		} else if (isScrollEnd) {
+			topNav.style.top = '-6.2rem';
+			bottomNav.style.bottom = '0';
+		} else {
+			topNav.style.top = '0';
+			bottomNav.style.bottom = '0';
 		}
 		lastScrollPosition = currentScrollPosition;
 	};
