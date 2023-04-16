@@ -13,6 +13,13 @@
 </script>
 
 <div class="Slot">
+	<div class="textBox">
+		<div class="InfoBox">
+			<h1 class="primaryTheme">Service Zones 📍</h1>
+			<p class="primaryTheme">Schmick Trees & Gardens offers a range of solutions, focusing on 3 core areas.</p>
+			<p class="small primaryTheme">Tap the box most relevant to you above and discover how we can assist! 🌳 🌺</p>
+		</div>
+	</div>
 	<div class="flexBoxy">
 		<button on:click={navShow} class="box box1">
 			<div class="ImgCont">
@@ -36,13 +43,6 @@
 			</div>
 		</button>
 	</div>
-	<div class="textBox">
-		<div class="InfoBox">
-			<h1 class="primaryTheme">Service Zones 📍</h1>
-			<p class="primaryTheme">Schmick Trees & Gardens offers a range of solutions, focusing on 3 core areas.</p>
-			<p class="small primaryTheme">Tap the box most relevant to you above and discover how we can assist! 🌳 🌺</p>
-		</div>
-	</div>
 </div>
 
 <style>
@@ -64,7 +64,7 @@
 	.gradFlex {
 		width: 100%;
 		height: 100%;
-		background-image: linear-gradient(#0000, var(--primary));
+		background-image: linear-gradient(var(--primary), #0000);
 
 		position: absolute;
 	}
