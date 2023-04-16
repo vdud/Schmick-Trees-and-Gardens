@@ -45,6 +45,7 @@
 			</div>
 			<div class="servicesFlex">
 				<button on:click={navShow} class="flex flex1">
+					<div class="flexGrad" />
 					<div class="imgContainer scale2">
 						<div class="grad" />
 						<img class="imgSlotFlex" src={Img_Two} alt="Gardening, cutting grass" />
@@ -54,6 +55,7 @@
 					</div>
 				</button>
 				<button on:click={navShow} class="flex flex2">
+					<div class="flexGrad" />
 					<div class="imgContainer scale2">
 						<div class="grad" />
 						<img class="imgSlotFlex" src={Img_Four} alt="Gardening, cutting grass" />
@@ -62,6 +64,7 @@
 						<p class="FlexInfoText">Trees</p>
 					</div></button>
 				<button on:click={navShow} class="flex flex3">
+					<div class="flexGrad" />
 					<div class="imgContainer scale2">
 						<div class="grad" />
 						<img class="imgSlotFlex" src={Img_One} alt="Gardening, cutting grass" />
@@ -152,6 +155,15 @@
 </div>
 
 <style>
+	.flexGrad {
+		position: absolute;
+		bottom: 30px;
+		left: 0;
+		width: 100%;
+		height: calc(93% - 30px);
+		background: linear-gradient(180deg, #0000, var(--primaryThemeInverted));
+		z-index: 4;
+	}
 	.small {
 		font-size: 0.75rem;
 		font-weight: 100;
@@ -177,6 +189,8 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
+		height: 30px;
+		z-index: 2;
 		/* height: fit-content; */
 
 		background-color: var(--primaryThemeInverted);
@@ -202,7 +216,8 @@
 		/* margin: 3px; */
 		/* width: 33.33%; */
 		width: calc(100% / 3 - 6px);
-		height: calc(100% - 6px);
+		/* height: calc(100% - 6px); */
+		height: 169px;
 		background-color: var(--primaryTheme);
 		overflow: hidden;
 

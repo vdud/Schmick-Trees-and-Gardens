@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+
 @media (prefers-color-scheme: dark) {
 	:root {
 		--primaryTheme: #000;
@@ -35,6 +37,7 @@
 
 	/* --primary: #cd7b41; */
 	/* --secondary: #7fb785; */
+
 	--optDark: #c63734;
 	--optLight: #ffeead;
 	--secOptDark: #b08daf;
@@ -43,6 +46,10 @@
 
 	--white: #fff;
 	--black: #000;
+	--orange: #cd7b41;
+	--green: #7fb785;
+	--blue: #7f9fb7;
+	--red: #b77f7f;
 
 	--dull: 70%;
 	--extraDull: 20%;
@@ -53,7 +60,6 @@
 	--borderRadius: calc(var(--buttonHW) / 3);
 	--smallerBorderRadius: calc(var(--buttonHW) / 3);
 }
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
 
 * {
 	font-family: 'Josefin Sans', sans-serif;

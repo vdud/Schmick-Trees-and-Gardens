@@ -7,7 +7,6 @@
 		const bottomNav = document.getElementById('BottomNav');
 		const slot = document.getElementById('slot');
 		const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
 		if (topNav && bottomNav && slot) {
 			if (currentScrollPosition > 100 && topNav.style.top !== '-6.2rem') {
 				topNav.style.top = '-6.2rem';
@@ -23,6 +22,17 @@
 			}
 		}
 	};
+
+	const openCall = () => {
+		window.open('tel:0410 513 544');
+	};
+	const openWhatsapp = () => {
+		window.open('https://wa.me/61410513544');
+	};
+
+	const openEmail = () => {
+		window.open('mailto:schmickmowing1@gmail.com' + '?subject=' + 'Contacting about the Gardening Help' + '&body=' + 'Hey Michael, I would like to know more about the gardening help you offer.');
+	};
 </script>
 
 <div id="TopNav" class="Nav topNav">
@@ -36,10 +46,10 @@
 
 <div id="BottomNav" class="Nav BottomNav">
 	<div class="NavComponents flexDirectionRow">
-		<button on:click={navShow} class="ContactUs">Contact Us </button>
-		<button class="component componentRow component1" />
-		<button class="component componentRow component2" />
-		<button class="component componentRow component3" />
+		<button on:click={navShow} class="ContactUs">Contact</button>
+		<button on:click={openWhatsapp} class="component componentRow component1"> whatsapp us </button>
+		<button on:click={openEmail} class="component componentRow component2"> e-mail us </button>
+		<button on:click={openCall} class="component componentRow component3"> call us </button>
 	</div>
 </div>
 
@@ -119,13 +129,13 @@
 	.flexDirectionRow {
 		display: flex;
 		justify-content: space-evenly;
-		align-items: end;
-		margin-bottom: 20px;
+		align-items: center;
+		/* margin-bottom: 20px; */
 		position: relative;
 	}
-	.flexDirectionColumn {
-		/* flex-direction: column; */
-	}
+	/* .flexDirectionColumn { */
+	/* flex-direction: column; */
+	/* } */
 
 	.component {
 		border-radius: 6px;
@@ -137,9 +147,10 @@
 		width: calc(33% - 10px);
 
 		transition: all 0.3s ease-in-out;
+		/* margin-right: 10px; */
 
 		color: var(--primaryTheme);
-		background-color: var(--tertiaryThemeInverted);
+		/* background-color: var(--secondary); */
 
 		box-shadow: var(--boxShadows);
 	}
@@ -166,13 +177,13 @@
 		align-items: center;
 		justify-content: center;
 	}
-	/* .component1 {
-		background-color: blue;
-	} */
-	/* .component2 {
-    background-color: green;
-  } */
-	/* .component3 {
-    background-color: hotpink;
-  } */
+	.component1 {
+		background-image: linear-gradient(45deg, var(--green), var(--primary));
+	}
+	.component2 {
+		background-image: linear-gradient(45deg, var(--red), var(--primary));
+	}
+	.component3 {
+		background-image: linear-gradient(45deg, var(--blue), var(--primary));
+	}
 </style>
