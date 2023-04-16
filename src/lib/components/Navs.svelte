@@ -1,4 +1,7 @@
 <script lang="ts">
+	import logoImg from '$lib/Assets/old-website-images/Logo Trans-Shadows.png';
+	import BGImg from '$lib/Assets/old-website-images/Old-website-asset-No-6.jpg';
+
 	const navShow = () => {
 		const topNav = document.getElementById('TopNav');
 		const bottomNav = document.getElementById('BottomNav');
@@ -24,7 +27,10 @@
 
 <div id="TopNav" class="Nav topNav">
 	<div class="NavComponents flexDirectionColumn">
-		<div class="component componentCol component1" />
+		<div class="component componentCol component1">
+			<img class="logoImg" src={logoImg} alt="Schmick Trees & Gardens Mowning" />
+			<img class="logoBGImg" src={BGImg} alt="Schmick Trees & Gardens Mowning" />
+		</div>
 	</div>
 </div>
 
@@ -38,6 +44,20 @@
 </div>
 
 <style>
+	.logoImg {
+		height: 100%;
+		object-fit: contain;
+	}
+	.logoBGImg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		object-fit: contain;
+		z-index: -1;
+		scale: 1.1;
+		filter: blur(2px);
+	}
 	.ContactUs {
 		position: absolute;
 		top: 0;
@@ -47,7 +67,7 @@
 		background-color: var(--secondary);
 		box-shadow: var(--boxShadows);
 		color: black;
-		z-index: 0;
+		z-index: 100;
 
 		display: flex;
 		align-items: center;
@@ -55,20 +75,21 @@
 		overflow: hidden;
 
 		padding: 12px 20px;
-		border-radius: 5px;
+		border-radius: var(--borderRadius);
 
 		transform: translate(0%, -85%);
 	}
 	.Nav {
 		position: fixed;
 		left: 0;
-		width: calc(100% - 20px);
-		background-color: var(--primary);
-		box-shadow: var(--boxShadowsBlur);
+		box-shadow: var(--boxShadows);
 		z-index: 100;
 
-		border-radius: 5px;
-		margin: 10px;
+		border-radius: var(--borderRadius);
+
+		width: calc(100% - 60px);
+		margin: 9px 29px;
+		border: 1px solid var(--tertiaryThemeInverted);
 
 		display: flex;
 		align-items: center;
@@ -77,11 +98,15 @@
 	.topNav {
 		top: 0;
 		height: 6rem;
+		overflow: hidden;
+
 		transition: top 0.3s ease-in-out;
 	}
 	.BottomNav {
 		bottom: 0;
 		height: 4rem;
+
+		background-color: var(--primary);
 		transition: bottom 0.3s ease-in-out;
 	}
 
@@ -104,7 +129,6 @@
 
 	.component {
 		border-radius: 6px;
-		background-color: var(--tertiaryThemeInverted);
 	}
 
 	.componentRow {
@@ -115,6 +139,8 @@
 		transition: all 0.3s ease-in-out;
 
 		color: var(--primaryTheme);
+		background-color: var(--tertiaryThemeInverted);
+
 		box-shadow: var(--boxShadows);
 	}
 	.componentRow:hover {
@@ -135,14 +161,18 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	/* .component1 {
-    background-color: blue;
-  }
-  .component2 {
+		background-color: blue;
+	} */
+	/* .component2 {
     background-color: green;
-  }
-  .component3 {
+  } */
+	/* .component3 {
     background-color: hotpink;
   } */
 </style>

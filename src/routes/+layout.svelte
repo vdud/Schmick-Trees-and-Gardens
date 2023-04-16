@@ -13,7 +13,9 @@
 		bottomNav = document.getElementById('BottomNav');
 		slot = document.getElementById('slot');
 
-		bottomNav.style.bottom = '-4.2rem';
+		setTimeout(() => {
+			bottomNav.style.bottom = '-4.2rem';
+		}, 300);
 	});
 
 	let lastScrollPosition = 0;
@@ -25,23 +27,23 @@
 
 		const isScrollEnd = currentScrollPosition + window.innerHeight >= slot.offsetHeight;
 		const isScrollStart = currentScrollPosition < 100;
-		// const isScrollStart = currentScrollPosition === 0;
 
-		if (isScrollingDown && !isScrollStart && !isScrollingUp && !isScrollEnd) {
+		if (isScrollingDown) {
 			topNav.style.top = '-6.2rem';
-			// bottomNav.style.bottom = '-4.2rem';s
-			bottomNav.style.bottom = '0';
-		} else if (isScrollStart) {
+			// bottomNav.style.bottom = '0';
+			bottomNav.style.bottom = '-4.2rem';
+		}
+		if (isScrollStart) {
 			topNav.style.top = '0';
 			bottomNav.style.bottom = '-4.2rem';
-		} else if (isScrollingUp) {
+		}
+		if (isScrollingUp) {
 			topNav.style.top = '0';
-			bottomNav.style.bottom = '-4.2rem';
-		} else if (isScrollEnd) {
-			topNav.style.top = '-6.2rem';
+			// bottomNav.style.bottom = '-4.2rem';
 			bottomNav.style.bottom = '0';
-		} else {
-			topNav.style.top = '0';
+		}
+		if (isScrollEnd) {
+			topNav.style.top = '-6.2rem';
 			bottomNav.style.bottom = '0';
 		}
 		lastScrollPosition = currentScrollPosition;
